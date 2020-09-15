@@ -67,7 +67,7 @@ namespace TpAuteurs
 
             foreach (var auteur in gainAuteurs)
             {
-                Console.WriteLine(auteur.Key.Nom);
+                Console.WriteLine(auteur.Key.Nom + auteur.Key.Prenom);
                 Console.WriteLine(auteur.Key.Factures.Average(facture => facture.Montant));
             }
 
