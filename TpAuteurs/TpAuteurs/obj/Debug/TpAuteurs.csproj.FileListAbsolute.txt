@@ -1,0 +1,7 @@
+C:\Users\brien\ASP.net\source\repos\TpAuteurs\TpAuteurs\bin\Debug\TpAuteurs.exe.config
+C:\Users\brien\ASP.net\source\repos\TpAuteurs\TpAuteurs\bin\Debug\TpAuteurs.exe
+C:\Users\brien\ASP.net\source\repos\TpAuteurs\TpAuteurs\bin\Debug\TpAuteurs.pdb
+C:\Users\brien\ASP.net\source\repos\TpAuteurs\TpAuteurs\obj\Debug\TpAuteurs.csprojAssemblyReference.cache
+C:\Users\brien\ASP.net\source\repos\TpAuteurs\TpAuteurs\obj\Debug\TpAuteurs.csproj.CoreCompileInputs.cache
+C:\Users\brien\ASP.net\source\repos\TpAuteurs\TpAuteurs\obj\Debug\TpAuteurs.exe
+C:\Users\brien\ASP.net\source\repos\TpAuteurs\TpAuteurs\obj\Debug\TpAuteurs.pdb
