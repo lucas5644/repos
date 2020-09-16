@@ -20,14 +20,28 @@ namespace Chats.Controllers
         public ActionResult Details(int id)
         {
             Chat chat = FakeDb.Instance.ListeChats.FirstOrDefault(x => x.Id == id);
-            return View(chat);
+            if (chat != null)
+            {
+                return View(chat);
+            }else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
 
         // GET: Chat/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Chat chat = FakeDb.Instance.ListeChats.FirstOrDefault(x => x.Id == id);
+            if (chat != null)
+            {
+                return View(chat);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         // POST: Chat/Delete/5
