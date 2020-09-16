@@ -13,13 +13,14 @@ namespace Chats.Controllers
         // GET: Chat
         public ActionResult Index()
         {
-            return View();
+            return View(FakeDb.Instance.ListeChats);
         }
 
         // GET: Chat/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Chat chat = FakeDb.Instance.ListeChats.FirstOrDefault(x => x.Id == id);
+            return View(chat);
         }
 
 
