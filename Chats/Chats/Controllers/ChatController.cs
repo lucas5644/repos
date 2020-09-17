@@ -50,7 +50,8 @@ namespace Chats.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                Chat chat = FakeDb.Instance.ListeChats.FirstOrDefault(x => x.Id == id);
+                FakeDb.Instance.ListeChats.Remove(chat);
 
                 return RedirectToAction("Index");
             }

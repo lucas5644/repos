@@ -34,7 +34,6 @@ namespace Chats.Database
             ListeChats.Add(new Chat { Id = 5, Nom = "Chatran", Age = 4, Couleur = "Fauve" });
             ListeChats.Add(new Chat { Id = 6, Nom = "Minou", Age = 2, Couleur = "Blanc" });
             ListeChats.Add(new Chat { Id = 7, Nom = "Bichette", Age = 12, Couleur = "Rousse" });
-            
         }
     }
 }
