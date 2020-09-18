@@ -1,10 +1,10 @@
-﻿using BO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PizzaTP.Database
+namespace BO.Database
 {
     public class FakeDb
     {
@@ -16,25 +16,30 @@ namespace PizzaTP.Database
         /// </summary>
         public static FakeDb Instance { get { return lazy.Value; } }
 
-        
+
         private FakeDb()
         {
-            this.ListePizzas = new List<BO.Pizza>();
+            this.ListePizzas = new List<Pizza>();
             this.IngredientsDisponibles = new List<Ingredient>();
             this.PatesDisponibles = new List<Pate>();
             InitialiserPates();
             InitialiserIngredients();
-            InitialisaterPizzas();
+            //InitialisaterPizzas();
         }
 
-        public List<BO.Pizza> ListePizzas { get; private set; }
+        public List<Pizza> ListePizzas { get; private set; }
 
-        private void InitialisaterPizzas()
-        {
-            ListePizzas.Add(new BO.Pizza { Id = 1, Nom = "Reine", Pate = PatesDisponibles[1] });
-        }
+        //private void InitialisaterPizzas()
+        //{
+        //    ListePizzas.Add(new Pizza
+        //    {
+        //        Id = 1,
+        //        Nom = "Reine",
+        //        Pate = PatesDisponibles[1],
+        //        Ingredients = (List<Ingredient>)IngredientsDisponibles.Where(x => x.Id == 2)
+        //    });
+        //}
 
-       
 
         public List<Ingredient> IngredientsDisponibles { get; private set; }
         private void InitialiserIngredients()

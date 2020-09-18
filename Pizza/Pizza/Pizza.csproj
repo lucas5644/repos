@@ -122,10 +122,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PizzasController.cs" />
-    <Compile Include="Database\FakeDb.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PizzaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,13 +166,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Pizzas\Index.cshtml" />
     <Content Include="Views\Pizzas\Details.cshtml" />
-    <Content Include="Views\Pizzas\Edit.cshtml" />
     <Content Include="Views\Pizzas\Delete.cshtml" />
     <Content Include="Views\Pizzas\Create.cshtml" />
+    <Content Include="Views\Shared\_PizzaDisplay.cshtml" />
+    <Content Include="Views\Pizzas\Edit.cshtml" />
+    <Content Include="Views\Shared\_PizzaDisplayWithId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -188,7 +189,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Desktop\BO\BO.csproj">
+    <ProjectReference Include="..\BO\BO.csproj">
       <Project>{6066eaaa-6025-49bc-a1f3-fc6447c42cd9}</Project>
       <Name>BO</Name>
     </ProjectReference>
