@@ -1,0 +1,6 @@
+C:\Users\brien\ASP.net\source\repos\TpDojo\BO\bin\Debug\BO.dll
+C:\Users\brien\ASP.net\source\repos\TpDojo\BO\bin\Debug\BO.pdb
+C:\Users\brien\ASP.net\source\repos\TpDojo\BO\obj\Debug\BO.csproj.CoreCompileInputs.cache
+C:\Users\brien\ASP.net\source\repos\TpDojo\BO\obj\Debug\BO.dll
+C:\Users\brien\ASP.net\source\repos\TpDojo\BO\obj\Debug\BO.pdb
+C:\Users\brien\ASP.net\source\repos\TpDojo\BO\bin\Debug\BO.dll.config
