@@ -15,10 +15,11 @@ namespace BO.Validation
         public override bool IsValid(object value)
         {
             bool result = false;
-            if (value.ToString().StartsWith("F"))
+            if (value.ToString().Contains(BO.Database.FakeDb.Instance.ListePizzas.Any().ToString()))
             {
                 result = true;
             }
+
             return result;
         }
     }

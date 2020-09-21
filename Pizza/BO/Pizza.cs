@@ -1,4 +1,5 @@
-﻿using BO.Validation;
+﻿using BO.Database;
+using BO.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,14 +11,14 @@ namespace BO
 {
     public class Pizza
     {
-
         public int Id { get; set; }
         [System.ComponentModel.DataAnnotations.MinLength(5, ErrorMessage = "Doit être compris entre 5 et 20")]
         [System.ComponentModel.DataAnnotations.MaxLength(20, ErrorMessage = "Doit être compris entre 5 et 20")]
+        [MyValidation]
         public string Nom { get; set; }
-        [Required]
+        //[Required]
         public Pate Pate { get; set; }
-        [System.ComponentModel.DataAnnotations.Range(2, 5, ErrorMessage = "Entre 2 et 5 ingrédients")]
+        //[System.ComponentModel.DataAnnotations.Range(2, 5, ErrorMessage = "Entre 2 et 5 ingrédients")]
         public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
 
     }
