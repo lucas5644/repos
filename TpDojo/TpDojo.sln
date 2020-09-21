@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TpDojo", "TpDojo\TpDojo.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "BO\BO.csproj", "{0BBA0441-0AB7-4112-946B-521C9CEC7367}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo10", "..\ENI-RCDA0008F-master\Demo10\Demo10.csproj", "{58960C4E-458A-456D-9B55-5C928C2FE1BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0BBA0441-0AB7-4112-946B-521C9CEC7367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BBA0441-0AB7-4112-946B-521C9CEC7367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BBA0441-0AB7-4112-946B-521C9CEC7367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58960C4E-458A-456D-9B55-5C928C2FE1BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58960C4E-458A-456D-9B55-5C928C2FE1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58960C4E-458A-456D-9B55-5C928C2FE1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58960C4E-458A-456D-9B55-5C928C2FE1BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
