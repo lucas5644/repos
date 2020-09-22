@@ -111,8 +111,13 @@ namespace TpDojo.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Arme arme = db.Armes.Find(id);
-            Samourai samourai = db.Samourais.Where(x => x.Arme.Id == arme.Id).ToList();
+            List<Samourai> samourais = new List<Samourai>();
+            samourais = db.Samourais.Where(x => x.Arme.Id == arme.Id).ToList();
             db.Armes.Remove(arme);
+            foreach (var item in samourais)
+            {
+                db.Samourais.Remove(item);
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }
