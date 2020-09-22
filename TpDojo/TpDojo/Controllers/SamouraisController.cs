@@ -39,7 +39,9 @@ namespace TpDojo.Controllers
         // GET: Samourais/Create
         public ActionResult Create()
         {
-            return View();
+            SamouraiVM vm = new SamouraiVM();
+            vm.Armes = db.Armes.ToList();
+            return View(vm);
         }
 
         // POST: Samourais/Create
@@ -47,31 +49,33 @@ namespace TpDojo.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Force,Nom")] Samourai samourai)
+        public ActionResult Create(SamouraiVM vm)
         {
             if (ModelState.IsValid)
             {
-                db.Samourais.Add(samourai);
+                vm.Samourai.Arme = db.Armes.Find(vm.ArmeId);
+                db.Samourais.Add(vm.Samourai);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(samourai);
+            return View(vm);
         }
 
         // GET: Samourais/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+
+            SamouraiVM vm = new SamouraiVM();
+            vm.Armes = db.Armes.ToList();
+            vm.Samourai = db.Samourais.FirstOrDefault(x => x.Id == id);
+
+            if (vm.Samourai.Arme != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                vm.ArmeId = vm.Samourai.Arme.Id;
             }
-            Samourai samourai = db.Samourais.Find(id);
-            if (samourai == null)
-            {
-                return HttpNotFound();
-            }
-            return View(samourai);
+
+            return View(vm);
         }
 
         // POST: Samourais/Edit/5
@@ -79,15 +83,20 @@ namespace TpDojo.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Force,Nom")] Samourai samourai)
+        public ActionResult Edit(SamouraiVM vm)
         {
             if (ModelState.IsValid)
             {
+
+                Samourai samourai = db.Samourais.FirstOrDefault(x => x.Id == vm.Samourai.Id);
+                samourai.Nom = vm.Samourai.Nom;
+                samourai.Force = samourai.Force;
+                samourai.Arme = db.Armes.FirstOrDefault(x => x.Id == vm.ArmeId);
                 db.Entry(samourai).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(samourai);
+            return View();
         }
 
         // GET: Samourais/Delete/5

@@ -4,3 +4,4 @@ C:\Users\brien\ASP.net\source\repos\TpDojo\BO\obj\Debug\BO.csproj.CoreCompileInp
 C:\Users\brien\ASP.net\source\repos\TpDojo\BO\obj\Debug\BO.dll
 C:\Users\brien\ASP.net\source\repos\TpDojo\BO\obj\Debug\BO.pdb
 C:\Users\brien\ASP.net\source\repos\TpDojo\BO\bin\Debug\BO.dll.config
+C:\Users\brien\ASP.net\source\repos\TpDojo\BO\obj\Debug\BO.csprojAssemblyReference.cache
