@@ -1,9 +1,9 @@
-﻿@model BO.Samourai
+﻿@model BO.SamouraiVM
 
 @{
     ViewBag.Title = "Details";
 }
-
+@Html.HiddenFor(model => model.Samourai.Id)
 <h2>Details</h2>
 
 <div>
@@ -11,32 +11,58 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Force)
+            @Html.DisplayNameFor(model => model.Samourai.Force)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Force)
+            @Html.DisplayFor(model => model.Samourai.Force)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Nom)
+            @Html.DisplayNameFor(model => model.Samourai.Nom)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Nom)
+            @Html.DisplayFor(model => model.Samourai.Nom)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Arme)
+            @Html.DisplayNameFor(model => model.Samourai.Arme)
+        </dt>
+
+
+        <dd>
+            @if (Model.Samourai.Arme != null)
+            {
+                @Html.DisplayFor(model => model.Samourai.Arme.Nom)
+            }
+            else
+            {
+                <div>Elle n'a pas d'arme</div>
+            }
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Samourai.ArtMartiaux)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Arme.Nom)
+            @if (Model.ArtMartiaux != null)
+            {
+                @Html.ListBoxFor(model => model.ArtMartialIds, Model.Samourai.ArtMartiaux.Select(
+            x => new SelectListItem() { Text = x.Nom }), new { @class = "form-control", @disabled = "disabled" })
+            }
+            else
+            {
+                <div>Elle n'a pas d'arme</div>
+            }
+
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Samourai.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

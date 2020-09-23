@@ -93,3 +93,4 @@ C:\Users\brien\ASP.net\source\repos\TpDojo\TpDojo\bin\EntityFramework.SqlServer.
 C:\Users\brien\ASP.net\source\repos\TpDojo\TpDojo\bin\BO.dll.config
 C:\Users\brien\ASP.net\source\repos\TpDojo\TpDojo\obj\Debug\TpDojo.Migrations.InitialCreate.resources
 C:\Users\brien\ASP.net\source\repos\TpDojo\TpDojo\obj\Debug\TpDojo.csproj.GenerateResource.cache
+C:\Users\brien\ASP.net\source\repos\TpDojo\TpDojo\obj\Debug\TpDojo.Migrations.Mig1.resources

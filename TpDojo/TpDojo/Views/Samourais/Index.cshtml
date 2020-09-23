@@ -20,6 +20,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Arme)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ArtMartiaux)
+        </th>
         <th></th>
     </tr>
 
@@ -33,7 +37,25 @@
                 @Html.DisplayFor(modelItem => item.Nom)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Arme.Nom)
+                @if (item.Arme != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Arme.Nom)
+                }
+                else
+                {
+                    <div>Pas d'arme</div>
+                }
+            </td>
+            <td>
+                @if (item.ArtMartiaux != null)
+                {
+                    foreach (var artMartial in item.ArtMartiaux)
+                    {
+                        @Html.DisplayFor(i => artMartial.Nom) <br/>
+                    }
+                }
+
+
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

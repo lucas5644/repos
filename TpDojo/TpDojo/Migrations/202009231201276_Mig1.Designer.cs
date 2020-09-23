@@ -7,13 +7,13 @@ namespace TpDojo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class Mig1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Mig1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009211524489_InitialCreate"; }
+            get { return "202009231201276_Mig1"; }
         }
         
         string IMigrationMetadata.Source

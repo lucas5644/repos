@@ -127,15 +127,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArmesController.cs" />
+    <Compile Include="Controllers\ArtMartialsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SamouraisController.cs" />
     <Compile Include="Data\TpDojoContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009211524489_InitialCreate.cs" />
-    <Compile Include="Migrations\202009211524489_InitialCreate.Designer.cs">
-      <DependentUpon>202009211524489_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202009231156491_InitialCreate.cs" />
+    <Compile Include="Migrations\202009231156491_InitialCreate.Designer.cs">
+      <DependentUpon>202009231156491_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009231201276_Mig1.cs" />
+    <Compile Include="Migrations\202009231201276_Mig1.Designer.cs">
+      <DependentUpon>202009231201276_Mig1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -186,6 +191,11 @@
     <Content Include="Views\Armes\Details.cshtml" />
     <Content Include="Views\Armes\Edit.cshtml" />
     <Content Include="Views\Armes\Index.cshtml" />
+    <Content Include="Views\ArtMartials\Create.cshtml" />
+    <Content Include="Views\ArtMartials\Delete.cshtml" />
+    <Content Include="Views\ArtMartials\Details.cshtml" />
+    <Content Include="Views\ArtMartials\Edit.cshtml" />
+    <Content Include="Views\ArtMartials\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -211,8 +221,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009211524489_InitialCreate.resx">
-      <DependentUpon>202009211524489_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009231156491_InitialCreate.resx">
+      <DependentUpon>202009231156491_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009231201276_Mig1.resx">
+      <DependentUpon>202009231201276_Mig1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

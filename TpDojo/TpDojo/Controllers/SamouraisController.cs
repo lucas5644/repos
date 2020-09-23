@@ -24,16 +24,19 @@ namespace TpDojo.Controllers
         // GET: Samourais/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Samourai samourai = db.Samourais.Find(id);
-            if (samourai == null)
-            {
-                return HttpNotFound();
-            }
-            return View(samourai);
+            SamouraiVM vm = new SamouraiVM();
+            vm.Samourai = db.Samourais.FirstOrDefault(x => x.Id == id);
+            return View(vm);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //Samourai samourai = db.Samourais.Find(id);
+            //if (samourai == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(samourai);
         }
 
         // GET: Samourais/Create
@@ -41,6 +44,8 @@ namespace TpDojo.Controllers
         {
             SamouraiVM vm = new SamouraiVM();
             vm.Armes = db.Armes.ToList();
+            vm.ArtMartiaux = db.ArtMartials.Select(
+                x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
             return View(vm);
         }
 
@@ -54,11 +59,13 @@ namespace TpDojo.Controllers
             if (ModelState.IsValid)
             {
                 vm.Samourai.Arme = db.Armes.Find(vm.ArmeId);
+                vm.Samourai.ArtMartiaux = db.ArtMartials.Where(x => vm.ArtMartialIds.Contains(x.Id)).ToList();
                 db.Samourais.Add(vm.Samourai);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            vm.Armes = db.Armes.ToList();
             return View(vm);
         }
 
@@ -68,12 +75,19 @@ namespace TpDojo.Controllers
 
             SamouraiVM vm = new SamouraiVM();
             vm.Armes = db.Armes.ToList();
+            vm.ArtMartiaux = db.ArtMartials.Select(
+                x => new SelectListItem { Text = x.Nom, Value = x.Id.ToString() }).ToList();
             vm.Samourai = db.Samourais.FirstOrDefault(x => x.Id == id);
 
             if (vm.Samourai.Arme != null)
             {
                 vm.ArmeId = vm.Samourai.Arme.Id;
             }
+
+            //if (vm.Samourai.ArtMartiaux.Any())
+            //{
+            //    vm.ArtMartialIds = vm.Samourai.ArtMartiaux.Select(x => x.Id).ToList();
+            //}
 
             return View(vm);
         }
@@ -88,10 +102,11 @@ namespace TpDojo.Controllers
             if (ModelState.IsValid)
             {
 
-                Samourai samourai = db.Samourais.FirstOrDefault(x => x.Id == vm.Samourai.Id);
+                var samourai = db.Samourais.FirstOrDefault(x => x.Id == vm.Samourai.Id);
                 samourai.Nom = vm.Samourai.Nom;
                 samourai.Force = samourai.Force;
                 samourai.Arme = db.Armes.FirstOrDefault(x => x.Id == vm.ArmeId);
+                samourai.ArtMartiaux = db.ArtMartials.Where(x => vm.ArtMartialIds.Contains(x.Id)).ToList();
                 db.Entry(samourai).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
