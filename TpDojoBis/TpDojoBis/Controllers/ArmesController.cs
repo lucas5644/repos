@@ -93,6 +93,13 @@ namespace TpDojoBis.Controllers
         // GET: Armes/Delete/5
         public ActionResult Delete(int? id)
         {
+            //si un samourai est équipe de l'arme, j'affiche un message d'erreur
+            List<int> idsArmes = db.Samourais.Include(x => x.Arme).Where(x => x.Arme != null).Select(x => x.Arme.Id).ToList();
+            if (idsArmes.Contains(id.Value))
+            {
+                ModelState.AddModelError("", "L'arme ne peut pas être supprimée");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -113,6 +120,7 @@ namespace TpDojoBis.Controllers
             Arme arme = db.Armes.Find(id);
             //récupération des samourais équipé de l'arme sélectionnée
             var samouraiAvecArme = db.Samourais.Include(x => x.Arme).Where(x => x.Arme.Id == arme.Id).ToList();
+         
             //je boucle sur chaque samourai et lui retire son arme
             foreach (var item in samouraiAvecArme)
             {
@@ -120,6 +128,7 @@ namespace TpDojoBis.Controllers
                 //ne pas oublier de passer le samourai en état "modifié"
                 db.Entry(item).State = EntityState.Modified;
             }
+
             db.Armes.Remove(arme);
             db.SaveChanges();
             return RedirectToAction("Index");
